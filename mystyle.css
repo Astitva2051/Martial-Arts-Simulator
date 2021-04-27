@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    color: red;
+  }
+p{
+    text-align: center;
+    color: blueviolet;
+    font-size: large;
+ }
+
+ #wrapper{
+     position: relative;
+     width: 1450px;
+     height: 595px;
+ }
+ #mybackground,#myCanvas{
+     position: absolute; top: 0px; left: 0px;
+     width: 1450px;
+     height: 595px;
+ }
+
+ button{
+     background-color: skyblue;
+ }
+ 

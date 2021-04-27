@@ -1,11 +1,13 @@
 let c = document.getElementById("myCanvas");
-let ctx = c.getContext("2d");
+let b = document.getElementById("mybackground");
+let ctx1 = b.getContext("2d");
+let ctx2 = c.getContext("2d");
 
 var background = new Image();
 background.src = "/images/background.jpg";
 
 background.onload = () => {
-    ctx.drawImage(background,0,0,1450,595);   
+    ctx1.drawImage(background,0,0,1450,595);   
 };
 
 
@@ -54,11 +56,11 @@ let loadImages = (callback) => {
 };
 
 
-let animate = (ctx, images, animation, callback) => {
+let animate = (ctx2, images, animation, callback) => {
     images[animation].forEach((image, index) => {
         setTimeout(()=>{
-            ctx.clearRect(100, 330, 300, 270);
-            ctx.drawImage(image, 100, 300, 300, 300);
+            ctx2.clearRect(100, 330, 300, 270);
+            ctx2.drawImage(image, 100, 300, 300, 300);
         }, index * 100);
     });
 
@@ -75,7 +77,7 @@ loadImages((images) => {
         else{
             selectedAnimation = queuedAnimation.shift();
         }
-        animate(ctx, images, selectedAnimation, aux);
+        animate(ctx2, images, selectedAnimation, aux);
     };
 
     aux();
